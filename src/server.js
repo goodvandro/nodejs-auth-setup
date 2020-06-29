@@ -41,7 +41,7 @@ function initial() {
 
   try {
     Role.create({
-      id: 3,
+      id: 3 ,
       name: "admin"
     });
   } catch (error) {
