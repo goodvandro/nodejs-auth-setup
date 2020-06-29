@@ -1,0 +1,7 @@
+{
+  "name": "auth-setup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Evandro",
+  "license": "MIT"
+}
