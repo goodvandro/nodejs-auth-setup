@@ -1,11 +1,10 @@
-const jwt = require('jsonwebtoken');
-const config = require('../config/auth.config');
-const db = require('../models');
-
+const jwt = require("jsonwebtoken");
+const config = require("../config/auth.config.js");
+const db = require("../models");
 const User = db.user;
 
 verifyToken = (req, res, next) => {
-  let token = req.headers['x-access-token'];
+  let token = req.headers["x-access-token"];
 
   if (!token) {
     return res.status(403).send({
@@ -19,7 +18,7 @@ verifyToken = (req, res, next) => {
         message: "Unauthorized!"
       });
     }
-    req.userId = decode.id;
+    req.userId = decoded.id;
     next();
   });
 };
@@ -35,7 +34,7 @@ isAdmin = (req, res, next) => {
       }
 
       res.status(403).send({
-        message: "Require admin Role!"
+        message: "Require Admin Role!"
       });
       return;
     });
